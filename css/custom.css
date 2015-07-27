@@ -1,0 +1,65 @@
+/*Continue Shopping Button */
+.btn-shop {background-color:#009c9c; color:#ffffff;}
+
+/*Login Page */
+.order-cloud .form-signin {background-color: #11436f; width: 100%}
+.order-cloud .btn {max-width:400px; margin-top:20px; margin-bottom:20px;}
+.order-cloud .form-control {max-width:400px;}
+
+/* Max-Width Center Content */
+@media (min-width: 768px) {.container, .container-view {width: 730px;}}
+@media (min-width: 992px) {.container, .container-view {width: 950px;}}
+@media (min-width: 1200px) {.container, .container-view {width: 1150px;}}
+
+/* Item Image Border */
+.product-image-large {border:1px solid #909090;}
+.thumbnail img {border:1px solid #909090}
+
+.navbar-default  {background-color: #0082C6;}
+.navbar-nav a  {color: #FFFFFF !important;}
+.navbar-nav li.active a  {background-color: #0071AD !important;}
+.navbar-nav li.active a  {color: #FFFFFF !important;}
+.navbar-default  {border-color: #0082C6;}
+body  {background-color: #F0F0F0;}
+.text-primary  {color: #0C2A3A;}
+.text-info  {color: #31708F;}
+body a  {color: #0C2A3A;}
+.btn-primary  {background-color: #0C2A3A;}
+.btn-primary, .btn-primary:hover  {color: #FFFFF;}
+.btn-primary  {border-color: #0C2A3A;}
+.btn-primary:hover  {background-color: #051118;}
+.btn-default  {background-color: #FFFFFF;}
+.btn-default, .btn-default:hover  {color: #333333 ;}
+.btn-default  {border-color: #CCCCCC;}
+.btn-default:hover  {background-color: #EBEBEB;}
+.btn-info  {background-color: #5BC0DE;}
+.btn-info, .btn-info:hover  {color: #FFFFFF;}
+.btn-info  {border-color: #46B8DA;}
+.btn-info:hover  {background-color: #39B3D7;}
+.btn-success  {background-color: #5CB85C;}
+.btn-success, .btn-success:hover  {color: #FFFFFF;}
+.btn-success  {border-color: #4CAE4C;}
+.btn-success:hover  {background-color: #47A447;}
+.btn-warning  {background-color: #f0ad4e;}
+.btn-warning, .btn-warning:hover  {color: #FFFFFF;}
+.btn-warning  {border-color: #EEA236;}
+.btn-warning:hover  {background-color: #ED9C28;}
+.btn-danger  {background-color: #D9534F;}
+.btn-danger, .btn-danger:hover  {color: #FFFFFF;}
+.btn-danger  {border-color: #D43F3A;}
+.btn-danger:hover  {background-color: #D2322D;}
+.jumbotron  {background-color: #FFFFFF;}
+.jumbotron h2  {color: #333333;}
+.panel-primary .panel-heading .panel-title  {background-color: #0071AD;}
+.panel-primary .panel-heading .panel-title  {color: #FFFFFF;}
+.panel-default .panel-heading .panel-title  {background-color: #F5F5F5;}
+.panel-default .panel-heading .panel-title  {color: #333333;}
+.fa-arrow-left{color:#ffffff !important;}
+.fa-caret-down{color:#75ACB3 !important;}
+.dropdown-menu > li > a:hover{background-color:#0082C6 !important;}
+.dropdown-menu > li > a:focus{background-color:#0082C6 !important;}
+.navbar-nav .dropdown-menu a {color: #333 !important;}
+.navbar-nav .dropdown-menu a:hover {color: #fff !important;}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{background-color: #0071AD !important;}
+.Document {display: none;}
+.img-center {margin-right:auto; margin-left:auto;}
