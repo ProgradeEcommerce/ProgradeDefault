@@ -185,7 +185,7 @@ four51.app.factory('Order', ['$resource', '$rootScope', '$451', 'Security', 'Err
 		return this;
 	};
 
-	var _calcdisc = function(order, acct) {
+	/*var _calcdisc = function(order, acct) {
 		if (acct == null) return order.Total;
 		var discount = 0;
 		if (acct.AccountType.MaxPercentageOfOrderTotal != 100) {
@@ -197,6 +197,32 @@ four51.app.factory('Order', ['$resource', '$rootScope', '$451', 'Security', 'Err
 		}
 		else
 			discount = acct.Balance;
+
+		return order.Total - discount;
+	};*/
+
+	var _calcdisc = function(order, acct) {
+		if (acct == null) return order.Total;
+		var discount = 0;
+		if (acct.AccountType.MaxPercentageOfOrderTotal && acct.AccountType.MaxPercentageOfOrderTotal != 100) {
+
+			console.log('SpendingAcctBalance:' + acct.Balance); //100
+
+			var total = order.Total;
+			console.log('Total (orderTotal):' + total); //35
+
+			var discountAmount = '0.' + acct.AccountType.MaxPercentageOfOrderTotal;
+			console.log('Discount Amount:' + discountAmount);
+
+			discount = total * discountAmount;
+			console.log('Discount:' + discount);
+
+		}
+		else {
+			// this is correct and applies when the AccountType.MaxPercentageOfOrderTotal is 100% and works fine even if discount is more than the order
+			discount = acct.Balance;
+			console.log('% of Order Total is 100%:' + discount);
+		}
 
 		return order.Total - discount;
 	};
