@@ -24,30 +24,18 @@ body  {background-color: #F0F0F0;}
 .text-primary  {color: #0C2A3A;}
 .text-info  {color: #31708F;}
 body a  {color: #0C2A3A;}
-.btn-primary  {background-color: #0C2A3A;}
-.btn-primary, .btn-primary:hover  {color: #FFFFF;}
-.btn-primary  {border-color: #0C2A3A;}
-.btn-primary:hover  {background-color: #051118;}
-.btn-default  {background-color: #FFFFFF;}
-.btn-default, .btn-default:hover  {color: #333333 ;}
-.btn-default  {border-color: #CCCCCC;}
-.btn-default:hover  {background-color: #EBEBEB;}
-.btn-info  {background-color: #5BC0DE;}
-.btn-info, .btn-info:hover  {color: #FFFFFF;}
-.btn-info  {border-color: #46B8DA;}
-.btn-info:hover  {background-color: #39B3D7;}
-.btn-success  {background-color: #5CB85C;}
-.btn-success, .btn-success:hover  {color: #FFFFFF;}
-.btn-success  {border-color: #4CAE4C;}
-.btn-success:hover  {background-color: #47A447;}
-.btn-warning  {background-color: #f0ad4e;}
-.btn-warning, .btn-warning:hover  {color: #FFFFFF;}
-.btn-warning  {border-color: #EEA236;}
-.btn-warning:hover  {background-color: #ED9C28;}
-.btn-danger  {background-color: #D9534F;}
-.btn-danger, .btn-danger:hover  {color: #FFFFFF;}
-.btn-danger  {border-color: #D43F3A;}
-.btn-danger:hover  {background-color: #D2322D;}
+.btn-primary  {background-color: #0C2A3A; color: #FFFFF; border-color: #0C2A3A;}
+.btn-primary:hover  {background-color: #051118; color: #FFFFF;}
+.btn-default  {background-color: #FFFFFF; color: #333333; border-color: #CCCCCC;}
+.btn-default:hover  {background-color: #EBEBEB; color: #333333;}
+.btn-info  {background-color: #5BC0DE; color: #FFFFFF; border-color: #46B8DA;}
+.btn-info:hover  {background-color: #39B3D7; color: #FFFFFF;}
+.btn-success  {background-color: #5CB85C; color: #FFFFFF; border-color: #4CAE4C;}
+.btn-success:hover  {background-color: #47A447; color: #FFFFFF;}
+.btn-warning  {background-color: #f0ad4e; color: #FFFFFF; border-color: #EEA236;}
+.btn-warning:hover  {background-color: #ED9C28; color: #FFFFFF;}
+.btn-danger  {background-color: #D9534F; color: #FFFFFF; border-color: #D43F3A;}
+.btn-danger:hover  {background-color: #D2322D; color: #FFFFFF;}
 .jumbotron  {background-color: #FFFFFF;}
 .jumbotron h2  {color: #333333;}
 .panel-primary .panel-heading .panel-title  {background-color: #0071AD;}
@@ -71,3 +59,5 @@ body a  {color: #0C2A3A;}
     align-content:center;
     flex-direction:column;
 }
+.category-btn {padding: 15px; background: url('http://trublue.prograde.com/images/site_images/TB_categoryIcons_121514-btnBlank.png'); width:200px; min-height:164px;}
+.category-btn h5 {font-size:18px; color:white; font-weight:bold;}

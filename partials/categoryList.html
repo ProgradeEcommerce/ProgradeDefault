@@ -14,8 +14,8 @@
             <ul>
                 <li class="col-lg-4 col-md-6 col-sm-6 col-xs-12" ng-repeat="c in currentCategory.SubCategories">
                     <a ng-href="catalog/{{c.InteropID}}" style="min-height:190px;">
-                        <div class="img-center vertical-center" style="padding: 15px; background: url('http://trublue.prograde.com/images/site_images/TB_categoryIcons_121514-btnBlank.png'); width:200px; min-height:164px;">
-	                        <h5 style="font-size:18px; color:white; font-weight:bold;" ng-bind-html="c.Name" />
+                        <div class="img-center vertical-center category-btn">
+	                        <h5 ng-bind-html="c.Name" />
                         </div>
                     </a>
                 </li>

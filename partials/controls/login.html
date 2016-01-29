@@ -9,12 +9,12 @@
                     <div>
                         <div class="view-form-icon" ng-show="!showEmailHelp && !PasswordReset">
                             <div>
-                                <label style="color:white;" ng-show="credentials.Username">{{'Username' | r}}</label>
+                                <label style="color:white;">{{'Username' | r}}</label>
                                 <input autofocus class="form-control" type="text" ng-model="credentials.Username" placeholder="{{'Username' | r}}" />
                                 <i class="fa fa-user"></i>
                             </div>
                             <div ng-show="!PasswordSecurityException">
-                                <label style="color:white;" ng-show="credentials.Password">{{'Password' | r}}</label>
+                                <label style="color:white;">{{'Password' | r}}</label>
                                 <input class="form-control" type="password" ng-model="credentials.Password" placeholder="{{'Password' | r}}" />
                                 <i class="fa fa-lock"></i>
                             </div>
@@ -28,7 +28,7 @@
                             </btn>
                             <div class="view-form-icon" ng-show="showEmailHelp">
                                 <div>
-                                    <label style="color:white;" ng-show="credentials.Email">{{'Email' | r}}</label>
+                                    <label style="color:white;">{{'Email' | r}}</label>
                                     <input class="form-control" type="email" ng-model="credentials.Email" placeholder="{{'Email' | r}}" />
                                     <i class="fa fa-envelope"></i>
                                 </div>
