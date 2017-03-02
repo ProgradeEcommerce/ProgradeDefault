@@ -71,8 +71,8 @@
                     </div>
                     <div class="col-sm-8">
                         <div class="row">
-                            <div class="col-md-6" ng-if="currentOrder.Status != 'AwaitingApproval'">
-                                <a ng-href="{{item.Product.Type == 'Kit' ? 'kit' : 'cart'}}/{{item.Product.InteropID}}/{{$index}}">
+                            <div class="col-md-6" ng-if="currentOrder.Status != 'AwaitingApproval' || isEditforApproval">
+                                <a ng-href="{{(item.Product.Type == 'Kit' ? 'kit' : 'cart') + '/' + (item.Product.InteropID) + '/' + (isEditforApproval ? (currentOrder.ID + '/') : '') + ($index)}}">
                                     <h3 class="text-primary">
                                         <i ng-show="!item.KitIsInvalid" class="fa fa-edit"></i>
                                         <i ng-show="item.KitIsInvalid" class="fa fa-exclamation-triangle"></i>
@@ -83,7 +83,7 @@
                                     </p>
                                 </a>
                             </div>
-                            <div class="col-md-6" ng-if="currentOrder.Status == 'AwaitingApproval'">
+                            <div class="col-md-6" ng-if="currentOrder.Status == 'AwaitingApproval' && !isEditforApproval">
                                 <h3 class="text-primary">
                                     {{item.ProductIDText}}
                                 </h3>

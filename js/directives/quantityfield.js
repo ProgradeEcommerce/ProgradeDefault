@@ -6,34 +6,8 @@ four51.app.directive('quantityfield', ['$451', 'ProductDisplayService', function
 			required: '='
 		},
 		restrict: 'E',
-		template: '<div ng-if="lineitem.ID">'+
-					'<div>'+
-					'<inlineerror ng-show="lineitem.qtyError" title="{{lineitem.qtyError}}" />'+
-					'<select id="451qa_input_qty" class="form-control" ng-change="qtyChanged(lineitem)" ng-if="lineitem.PriceSchedule.RestrictedQuantity" ng-required="required" ng-model="lineitem.Quantity" ng-options="pb.Quantity as getRestrictedQtyText(pb, lineitem.Product.QuantityMultiplier) for pb in lineitem.PriceSchedule.PriceBreaks" ui-validate="\'validQuantityAddToOrder($value, lineitem)\'"><option value=""></option></select>'+
-					'<input id="451qa_input_qty" placeholder="0" autocomplete="off" class="form-control" ng-change="qtyChanged(lineitem)" ng-if="!lineitem.PriceSchedule.RestrictedQuantity" type="text" ng-required="required" name="qtyInput" ng-model="lineitem.Quantity" ui-validate="\'validQuantityAddToOrder($value, lineitem)\'"/>'+
-					'<i class="fa fa-edit"></i>'+
-					'</div>'+
-					'</div>'+
-					'<div ng-if="!lineitem.ID && lineitem.Product.UnitOfMeasure" class="row">'+
-					'<div class="col-xs-12 col-sm-9 col-md-8 col-lg-9">'+
-					'<inlineerror ng-show="lineitem.qtyError" title="{{lineitem.qtyError}}" />'+
-					'<select id="451qa_input_qty" class="form-control" ng-change="qtyChanged(lineitem)" ng-if="lineitem.PriceSchedule.RestrictedQuantity" ng-required="required" ng-model="lineitem.Quantity" ng-options="pb.Quantity as getRestrictedQtyText(pb, lineitem.Product.QuantityMultiplier) for pb in lineitem.PriceSchedule.PriceBreaks" ui-validate="\'validQuantityAddToOrder($value, lineitem)\'"><option value=""></option></select>'+
-					'<input id="451qa_input_qty" placeholder="0" autocomplete="off" class="form-control" ng-change="qtyChanged(lineitem)" ng-if="!lineitem.PriceSchedule.RestrictedQuantity" type="text" ng-required="required" name="qtyInput" ng-model="lineitem.Quantity" ui-validate="\'validQuantityAddToOrder($value, lineitem)\'"/>'+
-					'<i class="fa fa-edit"></i>'+
-					'</div>'+
-					'<div class="col-xs-12 col-sm-3 col-md-4 col-lg-3">'+
-					'<input id="451qa_input_qty" type="text" class="form-control" ng-if="!lineitem.PriceSchedule.RestrictedQuantity" placeholder="{{lineitem.Product.UnitOfMeasure}}" readonly>'+
-					'</div>'+
-					'</div>'+
-					'<div ng-if="!lineitem.ID && !lineitem.Product.UnitOfMeasure">'+
-					'<div>'+
-					'<inlineerror ng-show="lineitem.qtyError" title="{{lineitem.qtyError}}" />'+
-					'<select id="451qa_input_qty" class="form-control" ng-change="qtyChanged(lineitem)" ng-if="lineitem.PriceSchedule.RestrictedQuantity" ng-required="required" ng-model="lineitem.Quantity" ng-options="pb.Quantity as getRestrictedQtyText(pb, lineitem.Product.QuantityMultiplier) for pb in lineitem.PriceSchedule.PriceBreaks" ui-validate="\'validQuantityAddToOrder($value, lineitem)\'"><option value=""></option></select>'+
-					'<input id="451qa_input_qty" placeholder="0" autocomplete="off" class="form-control" ng-change="qtyChanged(lineitem)" ng-if="!lineitem.PriceSchedule.RestrictedQuantity" type="text" ng-required="required" name="qtyInput" ng-model="lineitem.Quantity" ui-validate="\'validQuantityAddToOrder($value, lineitem)\'"/>'+
-					'<i class="fa fa-edit"></i>'+
-					'</div>'+
-					'</div>',
-			link: function(scope){
+		templateUrl: 'partials/controls/quantityfield.html',
+		link: function(scope){
 			scope.getRestrictedQtyText = function(priceBreak, qtyMultiplier){
 				var qtyText = priceBreak.Quantity * qtyMultiplier;
 				if(qtyMultiplier > 1)
