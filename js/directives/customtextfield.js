@@ -3,8 +3,8 @@ four51.app.directive('customtextfield', function() {
         scope: {
             customfield : '=',
             changed: '=',
-            hidesuffix: '@',
-            hideprefix: '@'
+            showsuffix: '=',
+            showprefix: '='
         },
         restrict: 'E',
         transclude: true,
