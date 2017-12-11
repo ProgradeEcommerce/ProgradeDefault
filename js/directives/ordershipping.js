@@ -155,22 +155,24 @@ four51.app.directive('ordershipping', ['Order', 'Shipper', 'Address', 'AddressLi
 				
 				/* Checking for residential address and setting appropriate value */
 				angular.forEach($scope.shipaddresses, function(address) {
-                    angular.forEach($scope.currentOrder.OrderFields, function(field) {
-                        if (field && field.Name == 'VFOUR51_RESIDENT') {
-                            angular.forEach(field.Options, function(option) {
-                                option.Selected = false;
-                                if (address.IsCustEditable && option.Value == 'Y'){
-                                    option.Selected = true;
-                                    field.Value = option.Value;
-                                }
-                                else if (!address.IsCustEditable && option.Value == 'N'){
-                                    option.Selected = true;
-                                    field.Value = option.Value;
-                                }
-                            });
-                        }
-                    });
-				});
+                    if (address.ID == $scope.currentOrder.ShipAddressID){
+                        angular.forEach($scope.currentOrder.OrderFields, function(field) {
+                            if (field.Name == 'VFOUR51_RESIDENT') {
+                                angular.forEach(field.Options, function(option) {
+                                    option.Selected = false;
+                                    if (address.IsCustEditable && option.Value == 'Y'){
+                                        option.Selected = true;
+                                        field.Value = option.Value;
+                                    }
+                                    else if (!address.IsCustEditable && option.Value == 'N'){
+                                        option.Selected = true;
+                                        field.Value = option.Value;
+                                    }
+                                });
+                            }
+                        });
+                    }
+                });
 				
 				saveChanges(
 					function(order) {
