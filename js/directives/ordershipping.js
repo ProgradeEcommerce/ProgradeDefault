@@ -151,7 +151,7 @@ four51.app.directive('ordershipping', ['Order', 'Shipper', 'Address', 'AddressLi
 					li.ShipperName = null;
 					li.Shipper = null;
 					li.ShipperID = null;
-				});	
+				});
 				
 				/* Checking for residential address and setting appropriate value */
 				angular.forEach($scope.shipaddresses, function(address) {
