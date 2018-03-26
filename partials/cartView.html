@@ -159,7 +159,7 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-12">
-                                <button type="button" class="btn btn-default" ng-show="item.SpecsLength > 0" ng-init="toggleSpecs = false" ng-click="toggleSpecs = !toggleSpecs">
+                                <button type="button" class="btn btn-default" ng-show="(item.Specs|hideSpecs).length > 0" ng-init="toggleSpecs = false" ng-click="toggleSpecs = !toggleSpecs">
                                     <span ng-show="toggleSpecs == false"><i class="fa fa-plus-circle"></i> {{('Show' | r) + ' ' + ('Specification' | r) | xlat}}</span>
                                     <span ng-show="toggleSpecs == true"><i class="fa fa-minus-circle"></i> {{('Hide' | r) + ' ' + ('Specification' | r) | xlat}}</span>
                                 </button>

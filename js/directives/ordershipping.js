@@ -242,6 +242,8 @@ four51.app.directive('ordershipping', ['Order', 'Shipper', 'Address', 'AddressLi
 					}
 				);
 			});
+
+            $scope.setShipAddressAtOrderLevel();
 		}]
 	};
 	return obj;
