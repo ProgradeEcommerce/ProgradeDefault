@@ -10,12 +10,12 @@
                         <div class="view-form-icon" ng-show="!showEmailHelp && !PasswordReset">
                             <div>
                                 <label style="color:white;">{{'Username' | r}}</label>
-                                <input autofocus class="form-control" type="text" ng-model="credentials.Username" name="form-username" placeholder="{{'Username' | r}}" />
+                                <input autofocus class="form-control" type="text" ng-model="credentials.Username" name="form-username" placeholder="{{'Username' | r}}" autocomplete="current-password" />
                                 <i class="fa fa-user"></i>
                             </div>
                             <div ng-show="!PasswordSecurityException">
                                 <label style="color:white;">{{'Password' | r}}</label>
-                                <input class="form-control" type="password" ng-model="credentials.Password" name="form-password" placeholder="{{'Password' | r}}" />
+                                <input class="form-control" type="password" ng-model="credentials.Password" name="form-password" placeholder="{{'Password' | r}}" autocomplete="current-password" />
                                 <i class="fa fa-lock"></i>
                             </div>
                         </div>
@@ -41,17 +41,17 @@
                             <div class="view-form-icon" ng-show="PasswordSecurityException">
                                 <div>
                                     <label ng-show="credentials.CurrentPassword">Current {{'Password' | r}}</label>
-                                    <input class="form-control" name="current_password" type="password" ng-model="credentials.CurrentPassword" placeholder="Current {{'Password' | r}}" />
+                                    <input class="form-control" name="current_password" type="password" ng-model="credentials.CurrentPassword" placeholder="Current {{'Password' | r}}" autocomplete="new-password" />
                                     <i class="fa fa-lock"></i>
                                 </div>
                                 <div>
                                     <label ng-show="credentials.NewPassword">New {{'Password' | r}}</label>
-                                    <input class="form-control" name="new_password" type="password" ng-model="credentials.NewPassword" placeholder="New {{'Password' | r}}" />
+                                    <input class="form-control" name="new_password" type="password" ng-model="credentials.NewPassword" placeholder="New {{'Password' | r}}" autocomplete="new-password" />
                                     <i class="fa fa-lock"></i>
                                 </div>
                                 <div>
                                     <label ng-show="credentials.ConfirmPassword">Confirm {{'Password' | r}}</label>
-                                    <input class="form-control" name="confirm_password" type="password" ng-model="credentials.ConfirmPassword"  placeholder="Confirm {{'Password' | r}}" ng-match="credentials.NewPassword" />
+                                    <input class="form-control" name="confirm_password" type="password" ng-model="credentials.ConfirmPassword"  placeholder="Confirm {{'Password' | r}}" ng-match="credentials.NewPassword" autocomplete="new-password" />
                                     <i class="fa fa-lock"></i>
                                     <inlineerror ng-show="login_form.confirm_password.$error.match" title="{{'Password' | r}} do not match!" />
                                 </div>
@@ -61,12 +61,12 @@
                             <div class="view-form-icon" ng-show="PasswordReset">
                                 <div>
                                     <label ng-show="credentials.NewPassword">New {{'Password' | r}}</label>
-                                    <input class="form-control" ng-required="PasswordReset" name="new_password" type="password" ng-model="credentials.NewPassword" placeholder="New {{'Password' | r}}" />
+                                    <input class="form-control" ng-required="PasswordReset" name="new_password" type="password" ng-model="credentials.NewPassword" placeholder="New {{'Password' | r}}" autocomplete="new-password" />
                                     <i class="fa fa-lock"></i>
                                 </div>
                                 <div>
                                     <label ng-show="credentials.ConfirmPassword">Confirm {{'Password' | r}}</label>
-                                    <input class="form-control" ng-required="PasswordReset" name="confirm_password" type="password" ng-model="credentials.ConfirmPassword"  placeholder="Confirm {{'Password' | r}}" ng-match="credentials.NewPassword" />
+                                    <input class="form-control" ng-required="PasswordReset" name="confirm_password" type="password" ng-model="credentials.ConfirmPassword"  placeholder="Confirm {{'Password' | r}}" ng-match="credentials.NewPassword" autocomplete="new-password" />
                                     <i class="fa fa-lock"></i>
                                     <inlineerror ng-show="login_form.confirm_password.$error.match" title="{{'Password' | r}} do not match!" />
                                 </div>
