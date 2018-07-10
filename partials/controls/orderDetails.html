@@ -12,7 +12,7 @@
                 <div class="col-xs-12 input-group">
                     <label class="required">{{('Order' | r) + ' '  + ('ID' | r) | xlat}}</label>
                     <input class="form-control" name="orderid" ng-disabled='currentOrder.autoID' type='text' ng-model="currentOrder.ExternalID"
-                           required ui-mask="{{currentOrder.autoID ? null : user.Company.POIDMask}}"></input>
+                           required ui-mask="{{currentOrder.autoID ? null : user.Company.POIDMask}}" maxlength="10"></input>
                         <span ng-if="user.Permissions.contains('AllowAutoGenPOID')" class="input-group-addon">
                             <input type='checkbox' ng-click="currentOrder.ExternalID = currentOrder.autoID ? null : 'auto'" ng-model='currentOrder.autoID' />
                         </span>
