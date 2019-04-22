@@ -18,7 +18,14 @@ function ($scope, $routeParams, $location, $filter, $rootScope, $451, Analytics,
 
     function submitOrder() {
 	    $scope.displayLoadingIndicator = true;
-	    $scope.errorMessage = null;
+		$scope.errorMessage = null;
+		
+		// Copy ship to first/last name to all line items to prevent multiple pick tickets being generated
+		angular.forEach($scope.currentOrder.LineItems, function(lineitem){
+			lineitem.ShipFirstName = $scope.currentOrder.LineItems[0].ShipFirstName;
+			lineitem.ShipLastName = $scope.currentOrder.LineItems[0].ShipLastName;
+		});
+
         Order.submit($scope.currentOrder,
 	        function(data) {
 //				if ($scope.user.Company.GoogleAnalyticsCode) {

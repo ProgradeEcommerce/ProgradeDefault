@@ -68,10 +68,10 @@
                                 </p>
                                 <div class="row" ng-show="!currentOrder.IsMultipleShip() && user.Permissions.contains('EditShipToName') && (orderShipAddress && !orderShipAddress.IsCustEditable)">
                                     <div class="col-sm-3">
-                                         <input class="form-control" type="text" ng-model="currentOrder.LineItems[0].ShipFirstName" placeholder="{{('First' | r) + ' ' + ('Name' | r) | xlat}}" ng-change="setNames()" required />
+                                         <input class="form-control" type="text" ng-model="currentOrder.LineItems[0].ShipFirstName" placeholder="{{('First' | r) + ' ' + ('Name' | r) | xlat}}" required />
                                     </div>
                                     <div class="col-sm-3">
-                                        <input class="form-control" type="text" ng-model="currentOrder.LineItems[0].ShipLastName" placeholder="{{('Last' | r) + ' ' + ('Name' | r) | xlat}}" ng-change="setNames()" required />
+                                        <input class="form-control" type="text" ng-model="currentOrder.LineItems[0].ShipLastName" placeholder="{{('Last' | r) + ' ' + ('Name' | r) | xlat}}" required />
                                     </div>
                                 </div>
                                 <p ng-show="orderShipAddress.Street1"><small>{{orderShipAddress.Street1}}</small></p>
