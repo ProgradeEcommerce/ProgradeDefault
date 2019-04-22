@@ -227,13 +227,6 @@ four51.app.directive('ordershipping', ['Order', 'Shipper', 'Address', 'AddressLi
 				}
 			};
 
-			$scope.syncNames = function() {
-				angular.forEach($scope.currentOrder.LineItems, function(li){
-					li.ShipFirstName = $scope.currentOrder.LineItems[0].ShipFirstName;
-					li.ShipLastName = $scope.currentOrder.LineItems[0].ShipLastName;
-				});
-			}
-
 			$scope.$on('event:AddressCancel', function(event) {
 				$scope.addressform = false;
 			});
