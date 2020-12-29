@@ -35,11 +35,13 @@ function ($scope, $routeParams, $location, $filter, $rootScope, $451, Analytics,
 				User.save($scope.user, function(data) {
 			        $scope.user = data;
 	                $scope.displayLoadingIndicator = false;
+					$scope.buttonClicked = false;
 		        });
 		        $scope.currentOrder = null;
 		        $location.path('/order/' + data.ID);
 	        },
 	        function(ex) {
+				$scope.buttonClicked = false;
 		        $scope.errorMessage = ex.Message;
 		        $scope.displayLoadingIndicator = false;
 		        $scope.shippingUpdatingIndicator = false;
@@ -65,10 +67,12 @@ function ($scope, $routeParams, $location, $filter, $rootScope, $451, Analytics,
 			        $scope.currentOrder.ExternalID = 'auto';
 		        }
 		        $scope.displayLoadingIndicator = false;
+				$scope.buttonClicked = false;
 		        if (callback) callback($scope.currentOrder);
 	            $scope.actionMessage = "Your changes have been saved";
 	        },
 	        function(ex) {
+				$scope.buttonClicked = false;
 		        $scope.currentOrder.ExternalID = null;
 		        $scope.errorMessage = ex.Message;
 		        $scope.displayLoadingIndicator = false;
@@ -80,13 +84,16 @@ function ($scope, $routeParams, $location, $filter, $rootScope, $451, Analytics,
 
     $scope.continueShopping = function() {
 	    if (confirm('Do you want to save changes to your order before continuing?') == true)
-	        saveChanges(function() { $location.path('catalog') });
+	        saveChanges(function() {
+				$location.path('catalog')
+			});
         else
 		    $location.path('catalog');
     };
 
     $scope.cancelOrder = function() {
 	    if (confirm('Are you sure you wish to cancel your order?') == true) {
+			$scope.buttonClicked = true;
 		    $scope.displayLoadingIndicator = true;
 	        Order.delete($scope.currentOrder,
 		        function() {
@@ -94,11 +101,13 @@ function ($scope, $routeParams, $location, $filter, $rootScope, $451, Analytics,
 		            $scope.currentOrder = null;
 			        User.save($scope.user, function(data) {
 				        $scope.user = data;
+						$scope.buttonClicked = false;
 				        $scope.displayLoadingIndicator = false;
 				        $location.path('catalog');
 			        });
 		        },
 		        function(ex) {
+					$scope.buttonClicked = false;
 			        $scope.actionMessage = ex.Message;
 			        $scope.displayLoadingIndicator = false;
 		        }
@@ -107,11 +116,13 @@ function ($scope, $routeParams, $location, $filter, $rootScope, $451, Analytics,
     };
 
     $scope.saveChanges = function() {
+		$scope.buttonClicked = true;
         saveChanges();
     };
 
     $scope.submitOrder = function() {
-       submitOrder();
+		$scope.buttonClicked = true;
+       	submitOrder();
     };
 
     $scope.saveFavorite = function() {
