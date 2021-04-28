@@ -64,7 +64,8 @@
                 </div>
                 <div>
                     <label ng-class="{required: hasStates}">{{'Zip' | r | xlat}}</label>
-                    <input name="zip" class="form-control" type="text" ng-model="address.Zip" placeholder="{{'Zip' | r | xlat}}" autocomplete="off" ng-required="hasStates()" />
+                    <input name="zip" class="form-control" type="text" ng-if="address.Country == 'US'" ng-model="address.Zip" placeholder="{{'Zip' | r | xlat}}" autocomplete="off" pattern=".{5,}" maxlength="5" required title="Must be 5 characters" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" ng-if="hasStates()"/>
+                    <input name="zip" class="form-control" type="text" ng-if="address.Country != 'US'" ng-model="address.Zip" placeholder="{{'Zip' | r | xlat}}" autocomplete="off" ng-required="hasStates()"/>
                     <i class="fa fa-map-marker"></i>
                 </div>
                 <div ng-class="{'view-form-select': !address.Country, '': address.Country }">
