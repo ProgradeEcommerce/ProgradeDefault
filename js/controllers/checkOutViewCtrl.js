@@ -67,12 +67,10 @@ function ($scope, $routeParams, $location, $filter, $rootScope, $451, Analytics,
 			        $scope.currentOrder.ExternalID = 'auto';
 		        }
 		        $scope.displayLoadingIndicator = false;
-				$scope.buttonClicked = false;
 		        if (callback) callback($scope.currentOrder);
 	            $scope.actionMessage = "Your changes have been saved";
 	        },
 	        function(ex) {
-				$scope.buttonClicked = false;
 		        $scope.currentOrder.ExternalID = null;
 		        $scope.errorMessage = ex.Message;
 		        $scope.displayLoadingIndicator = false;
